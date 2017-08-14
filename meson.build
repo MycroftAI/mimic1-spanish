@@ -34,6 +34,15 @@ if mimic_plugin_dir == ''
 endif
 message('Build mimic-spanish plugin: @0@'.format(build_plugin))
 
+# Saga Dependency:
+saga_dep = dependency('saga', required: false)
+if not saga_dep.found()
+  # We compile it:
+  saga_sub = subproject('saga')
+  saga_dep = saga_sub.get_variable('sagashareddep')
+endif
+
+
 
 es_header_subdir = join_paths('ttsmimic', 'lang', 'es')
 
@@ -47,7 +56,7 @@ sources += [mimic_spanish_config_h]
 
 ttsmimic_spanish_lib = library('ttsmimic_spanish', sources,
                                include_directories : includes,
-                               dependencies: mimiccore,
+                               dependencies: [mimiccore, saga_dep],
                                install: true)
 
 ttsmimic_spanish_dep = declare_dependency(link_with : ttsmimic_spanish_lib, 
@@ -59,7 +68,7 @@ if build_plugin
     'ttsmimic_spanish_plugin',
     ['src/mimic_spanish_plugin.c'],
     include_directories : includes,
-    dependencies: [mimiccore, ttsmimic_spanish_dep],
+    dependencies: [mimiccore, saga_dep, ttsmimic_spanish_dep],
     install_dir: mimic_plugin_dir,
     install: true)
 
@@ -83,7 +92,7 @@ pkg = import('pkgconfig')
 pkg.generate(libraries : ttsmimic_spanish_lib,
              name : 'ttsmimic_spanish',
              subdirs: es_header_subdir,
-             requires: 'ttsmimic_core',
+             requires: ['ttsmimic_core', 'saga'],
              description: 'Spanish support for text to speech synthesis in mimic.',
              version: meson.project_version())
 

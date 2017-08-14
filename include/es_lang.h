@@ -32,7 +32,7 @@
 
 void es_init(cst_voice *v);
 
-void usenglish_plugin_init();
-void usenglish_plugin_exit();
+void es_plugin_init();
+void es_plugin_exit();
 
 #endif
