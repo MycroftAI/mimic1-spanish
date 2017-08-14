@@ -45,14 +45,6 @@ endif
 
 es_header_subdir = join_paths('ttsmimic', 'lang', 'es')
 
-conf_data = configuration_data()
-conf_data.set('ENABLE_LANG_SPANISH_BUILTIN', not build_plugin)
-
-mimic_spanish_config_h = configure_file(output : 'mimic_spanish_config.h',
-                                        configuration : conf_data, install: true,
-                                        install_dir : join_paths(get_option('includedir'), es_header_subdir))
-sources += [mimic_spanish_config_h]
-
 ttsmimic_spanish_lib = library('ttsmimic_spanish', sources,
                                include_directories : includes,
                                dependencies: [mimiccore, saga_dep],

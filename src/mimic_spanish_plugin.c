@@ -33,12 +33,7 @@
  * 
  */
 
-#include "mimic_spanish_config.h"
 #include "es_lang.h"
-#include "mimic.h"
-
-#ifndef ENABLE_LANG_SPANISH_BUILTIN
 #include "cst_plugins.h"
 mimic_plugin_t mimic_plugin = { "es", 0, &es_plugin_init, &es_plugin_exit};
-#endif
 
