@@ -1,0 +1,6 @@
+[submodule "subprojects/saga"]
+	path = subprojects/saga
+	url = https://github.com/TALP-UPC/saga
+[submodule "subprojects/mimic-core"]
+	path = subprojects/mimic-core
+	url = https://github.com/zeehio/mimic-core

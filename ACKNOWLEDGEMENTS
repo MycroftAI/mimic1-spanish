@@ -1,0 +1,10 @@
+The Spanish language analysis in mimic has been done mainly by Sergio Oller. The
+phonetic transcriptions are done using Saga, a GPL-3 software from the Research Center on
+Language and Speech Technologies and  Applications TALP at the Universitat Politècnica
+de Catalunya, in Barcelona.
+
+The Saga software has been written by José B. Mariño and Albino Nogueiras and it is
+available under the GPL license at https://github.com/TALP-UPC/saga. Licenses for
+commercial privative applications can be obtained by contacting asuncion.moreno@upc.edu.
+
+
