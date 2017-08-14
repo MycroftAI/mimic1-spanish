@@ -6,7 +6,6 @@ sources = [
   'src/es_intonation.c',
   'src/es_text_analysis.c',
   'src/es_init.c',
-  'src/es_phrasing.c',
   'src/es_lexical_insertion.c',
   'src/es_lang_internal.h',
   'src/es_guess_pos.c',

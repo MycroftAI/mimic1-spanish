@@ -32,7 +32,6 @@
 void es_init_tokenizer(cst_voice *v);
 cst_val *es_tokentowords(cst_item *token);
 cst_utterance *es_pos_tagger(cst_utterance *u);
-cst_utterance *es_phrasing(cst_utterance *u);
 cst_utterance *es_lexical_insertion(cst_utterance *u);
 cst_utterance *es_intonation(cst_utterance *u);
 extern const cst_phoneset es_saga_phoneset;

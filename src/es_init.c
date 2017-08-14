@@ -27,6 +27,7 @@
  *
  */
 #include "cst_ffeatures.h"
+#include "cst_synth.h"
 #include "es_lang_internal.h"
 
 DEF_STATIC_CONST_VAL_STRING(es_dialect_default, "castilla");
@@ -49,8 +50,10 @@ void es_init(cst_voice *v)
     ff_register(v->ffunctions, "gpos", es_guess_pos);
     feat_set(v->features, "pos_tagger_func", uttfunc_val(&es_pos_tagger));
 
-    /* 5. Phrasing */
-    feat_set(v->features, "phrasing_func", uttfunc_val(&es_phrasing));
+    /* 5. Phrasing: The us_phrasing_cart is good enough for most latin languages.
+     *    It takes care of adding pauses after "," "." etc.
+     */
+    feat_set(v->features,"phrasing_cart",cart_val(&us_phrasing_cart));
 
     /* 6. Phoneset */
     feat_set(v->features, "phoneset", phoneset_val(&es_saga_phoneset));
