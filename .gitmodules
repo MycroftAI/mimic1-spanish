@@ -7,9 +7,9 @@
 	branch = development
 [submodule "subprojects/HTSEngine"]
 	path = subprojects/HTSEngine
-	url = https://github.com/MycroftAI/htsengine_meson.git
+	url = https://github.com/MycroftAI/htsengine_meson
 	branch = master
 [submodule "subprojects/pcre2"]
 	path = subprojects/pcre2
-	url = https://github.com/MycroftAI/pcre2_meson.git
+	url = https://github.com/MycroftAI/pcre2_meson
 	branch = 10.23
